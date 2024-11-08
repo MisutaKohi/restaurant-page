@@ -1,0 +1,5 @@
+# files for git to ignore
+
+# directories for git to ignore
+node_modules
+dist
