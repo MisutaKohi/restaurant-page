@@ -79,4 +79,13 @@ button:hover {
     height: calc(100vh - 75px);
 }
 
+p {
+    font-size: 1.5rem;
+    width: 60vw;
+}
+
+ul {
+    font-size: 1.5rem;
+    width: 60vw; 
+}
 
