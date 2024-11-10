@@ -36,6 +36,10 @@ svg {
     padding-left: 25px;
 }
 
+#logo-container:hover {
+    cursor: pointer;
+}
+
 #right-banner {
     width: 50%;
     display: flex;
@@ -44,11 +48,35 @@ svg {
     justify-content: end;
 }
 
-#right-banner > button {
+/* button classes */
+
+button {
     margin-right: 15px;
     padding: 8px;
     border-radius: 10px;
     font-size: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.nav-level:hover {
+    background-color: #D1B48A;
+}
+
+.page-level:hover {
+    background-color: #F1D27B;
+}
+
+/* home body */
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 75px);
 }
 
 
