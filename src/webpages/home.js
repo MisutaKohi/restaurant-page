@@ -1,3 +1,6 @@
+import renderAboutUs from './about-us';
+import renderWineList from './winelist';
+
 function renderHomepage() {
     const welcomeHeader = document.createElement('h2');
     welcomeHeader.innerText = 'Welcome to'
@@ -14,10 +17,12 @@ function renderHomepage() {
     const winesBtn = document.createElement('button');
     winesBtn.innerText = 'Our Wines';
     winesBtn.classList.add('page-level');
+    winesBtn.onclick = renderWineList;
 
     const aboutBtn = document.createElement('button');
     aboutBtn.innerText = 'About Us';
     aboutBtn.classList.add('page-level');
+    aboutBtn.onclick = renderAboutUs;
 
     const buttons = [winesBtn, aboutBtn];
     buttons.forEach((button) => buttonsContainer.appendChild(button));
