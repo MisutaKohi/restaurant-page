@@ -2,7 +2,7 @@ import renderHomepage from '../webpages/home';
 import renderAboutUs from '../webpages/about-us';
 import renderWineList from '../webpages/winelist';
 
-const logoRawSVG = require('svg-inline-loader?classPrefix!./../images/winery-logo.svg');
+const logoRawSVG = require('./../images/winery-logo.svg');
 
 function renderNavbar() {
     const navbar = document.getElementById('nav-bar');
