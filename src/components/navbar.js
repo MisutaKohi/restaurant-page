@@ -1,51 +1,51 @@
-import renderHomepage from '../webpages/home';
-import renderAboutUs from '../webpages/about-us';
-import renderWineList from '../webpages/winelist';
+import renderHomepage from "../webpages/home";
+import renderAboutUs from "../webpages/about-us";
+import renderWineList from "../webpages/winelist";
 
-const logoRawSVG = require('./../images/winery-logo.svg');
+const logoRawSVG = require("./../images/winery-logo.svg");
 
 function renderNavbar() {
-    const navbar = document.getElementById('nav-bar');
+  const navbar = document.getElementById("nav-bar");
 
-    /* left banner */ 
+  /* left banner */
 
-    const leftBanner = document.createElement('div');
-    leftBanner.id = 'left-banner';
-    navbar.appendChild(leftBanner);
+  const leftBanner = document.createElement("div");
+  leftBanner.id = "left-banner";
+  navbar.appendChild(leftBanner);
 
-    const logoContainer = document.createElement('div');
-    logoContainer.innerHTML = logoRawSVG;
-    logoContainer.id = 'logo-container';
-    logoContainer.onclick = renderHomepage;
-    leftBanner.appendChild(logoContainer);
+  const logoContainer = document.createElement("div");
+  logoContainer.innerHTML = logoRawSVG;
+  logoContainer.id = "logo-container";
+  logoContainer.onclick = renderHomepage;
+  leftBanner.appendChild(logoContainer);
 
-    /* right banner */
+  /* right banner */
 
-    const rightBanner = document.createElement('div');
-    rightBanner.id = 'right-banner';
-    navbar.appendChild(rightBanner)
+  const rightBanner = document.createElement("div");
+  rightBanner.id = "right-banner";
+  navbar.appendChild(rightBanner);
 
-    const homeBtn = document.createElement('button');
-    homeBtn.id = 'home-button';
-    homeBtn.innerText = 'Home';
-    homeBtn.onclick = renderHomepage;
+  const homeBtn = document.createElement("button");
+  homeBtn.id = "home-button";
+  homeBtn.innerText = "Home";
+  homeBtn.onclick = renderHomepage;
 
-    const winesBtn = document.createElement('button');
-    winesBtn.id = 'wines-button';
-    winesBtn.innerText = 'Our Wines'
-    winesBtn.onclick = renderWineList;
-    
-    const aboutBtn = document.createElement('button');
-    aboutBtn.id = 'about-button';
-    aboutBtn.innerText = 'About Us'
-    aboutBtn.onclick = renderAboutUs;
+  const winesBtn = document.createElement("button");
+  winesBtn.id = "wines-button";
+  winesBtn.innerText = "Our Wines";
+  winesBtn.onclick = renderWineList;
 
-    const buttons = [homeBtn, winesBtn, aboutBtn];
+  const aboutBtn = document.createElement("button");
+  aboutBtn.id = "about-button";
+  aboutBtn.innerText = "About Us";
+  aboutBtn.onclick = renderAboutUs;
 
-    buttons.forEach((button) => {
-        button.classList.add('nav-level');
-        rightBanner.appendChild(button);
-    });
+  const buttons = [homeBtn, winesBtn, aboutBtn];
+
+  buttons.forEach((button) => {
+    button.classList.add("nav-level");
+    rightBanner.appendChild(button);
+  });
 }
 
 export default renderNavbar;

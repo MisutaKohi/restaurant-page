@@ -1,6 +1,6 @@
 function renderWineList() {
-    const body = document.getElementById('content');
-    body.innerHTML = `
+  const body = document.getElementById("content");
+  body.innerHTML = `
         <p id='wines-list'>
             Our wines include:
             <ul>

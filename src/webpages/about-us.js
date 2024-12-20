@@ -1,6 +1,6 @@
 function renderAboutUs() {
-    const body = document.getElementById('content');
-    body.innerHTML = `
+  const body = document.getElementById("content");
+  body.innerHTML = `
         <p id='winery-about-us'>
             We are a family-owned and operated winery.
             Our roots run deep in the Willamette Valley

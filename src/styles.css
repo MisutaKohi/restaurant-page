@@ -1,91 +1,90 @@
 * {
-    padding: 0px;
-    margin: 0px;
-    font-family: sans-serif;
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
 }
 
 body {
-    background-color: rgb(240, 240, 240);
+  background-color: rgb(240, 240, 240);
 }
 
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000; 
-    box-shadow: 0 4px 2px -2px gray;
-    height: 75px;
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(225, 225, 225);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 2px -2px gray;
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(225, 225, 225);
 }
 
 #left-banner {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: start;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 
 svg {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #logo-container {
-    height: 60px;
-    padding-left: 25px;
+  height: 60px;
+  padding-left: 25px;
 }
 
 #logo-container:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #right-banner {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
 }
 
 /* button classes */
 
 button {
-    margin-right: 15px;
-    padding: 8px;
-    border-radius: 10px;
-    font-size: 1rem;
+  margin-right: 15px;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 1rem;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .nav-level:hover {
-    background-color: #D1B48A;
+  background-color: #d1b48a;
 }
 
 .page-level:hover {
-    background-color: #F1D27B;
+  background-color: #f1d27b;
 }
 
 /* home body */
 
 #content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 75px);
 }
 
 p {
-    font-size: 1.5rem;
-    width: 60vw;
+  font-size: 1.5rem;
+  width: 60vw;
 }
 
 ul {
-    font-size: 1.5rem;
-    width: 60vw; 
+  font-size: 1.5rem;
+  width: 60vw;
 }
-
