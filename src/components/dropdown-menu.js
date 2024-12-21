@@ -4,38 +4,48 @@ function createDropdownMenu(menuPlaceholder, optionsText, optionsFunctions) {
   }
 
   const div = document.createElement("div");
-  div.style.display = "relative";
-  div.style.flexDirection = "column";
-  div.style.alignItems = "center";
-  div.style.marginRight = "10px";
+  Object.assign(div.style, {
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-end",
+  });
 
   const button = document.createElement("button");
   button.innerText = menuPlaceholder;
-  button.classList.add("button");
-  button.classList.add("nav-level");
-  button.style.marginRight = 0;
+  button.classList.add("button", "nav-level");
   div.append(button);
 
   const dropdownContent = document.createElement("div");
-  dropdownContent.style.position = "absolute";
-  dropdownContent.style.borderCollapse = "collapse";
-  dropdownContent.style.right = 0;
-  dropdownContent.style.marginRight = "10px";
+  Object.assign(dropdownContent.style, {
+    position: "absolute",
+    top: "100%",
+    overflow: "hidden",
+    height: 0,
+    marginRight: "15px",
+    transition: "height 0.5s ease",
+  });
   div.append(dropdownContent);
-
-  const options = [];
 
   for (let i = 0; i < optionsText.length; i++) {
     const option = document.createElement("div");
-    options.push(option);
     option.innerText = optionsText[i];
     option.onclick = optionsFunctions[i];
-    option.classList.add("hidden");
-    option.style.border = "2px solid black";
-    option.style.padding = "8px";
-    option.style.width = "100px";
-    option.style.cursor = "pointer";
-    option.style.backgroundColor = "rgb(225, 225, 225)";
+
+    if (i === 0) {
+      option.style.borderTop = "2px solid black";
+    }
+
+    Object.assign(option.style, {
+      padding: "8px",
+      width: "100px",
+      cursor: "pointer",
+      backgroundColor: "rgb(225, 225, 225)",
+      borderLeft: "2px solid black",
+      borderRight: "2px solid black",
+      borderBottom: "2px solid black",
+    });
+
     option.onmouseover = () => {
       option.style.backgroundColor = "#d1b48a";
     };
@@ -50,20 +60,34 @@ function createDropdownMenu(menuPlaceholder, optionsText, optionsFunctions) {
     button.style.borderBottomLeftRadius = 0;
     button.style.borderBottomRightRadius = 0;
 
-    options.forEach((option) => {
-      option.classList.remove("hidden");
-    });
+    const borderThickness = 2;
+    dropdownContent.style.height = `${
+      calculateDropdownHeight(dropdownContent) + borderThickness
+    }px`;
   };
 
   div.onmouseleave = () => {
-    options.forEach((option) => {
-      option.classList.add("hidden");
-    });
+    dropdownContent.style.height = "0px";
 
-    button.style.borderRadius = "10px";
+    setTimeout(() => {
+      button.style.borderRadius = "10px";
+    }, 400);
   };
 
   return div;
+}
+
+function calculateDropdownHeight(parentElement) {
+  const options = Array.from(parentElement.children);
+  // console.log(options);
+
+  let totalHeight = 0;
+  options.forEach((option) => {
+    totalHeight += option.offsetHeight;
+
+    // console.log(option.offsetHeight);
+  });
+  return totalHeight;
 }
 
 export default createDropdownMenu;
